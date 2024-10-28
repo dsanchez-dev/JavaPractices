@@ -31,24 +31,15 @@ int age;
     }
 
     @Override
-    public String toString() {
-        final StringBuffer sb = new StringBuffer("EqualsHashCode{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", age=").append(age);
-        sb.append('}');
-        return sb.toString();
-    }
-
-    @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o ){
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass()  != o.getClass()) return false;
         EqualsHashCode that = (EqualsHashCode) o;
-        return age == that.age && Objects.equals(name, that.name);
+        return age == that.age && Objects.equals(name,that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age);
+        return Objects.hash(name,age);
     }
 }
