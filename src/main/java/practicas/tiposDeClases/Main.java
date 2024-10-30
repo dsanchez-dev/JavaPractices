@@ -78,6 +78,9 @@ public class Main  {
         System.out.println("-------------------------Lambda con for each version corta----------------------");
         lista.forEach(System.out::println);
 
+        System.out.println("-------------------------Limitaciones de las expresiones Lambda ----------------------");
+        //Las expresiones lambda no pueden ser usadas en todos los casos, por ejemplo, no se pueden usar en los siguientes casos:
+
 
     }
 }
