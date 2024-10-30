@@ -1,5 +1,6 @@
 package practicas.tiposDeClases;
 
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -63,6 +64,20 @@ public class Main  {
         Function<Integer, Integer> sumarTres = x -> x + 3;
         Function<Integer, Integer> sumarLuegoMultiplicar = multiplicarPorDos.compose(sumarTres);
         System.out.println(sumarLuegoMultiplicar.apply(5)); // Salida: 16 ((5 + 3) * 2)
+
+
+        System.out.println("-------------------------Lambda runnable----------------------");
+
+        Runnable runner = () -> System.out.println("Hola con runnable en lambda ");
+        runner.run();
+
+        System.out.println("-------------------------Lambda con for each version larga----------------------");
+        Integer[] numeros = {1,2,3,4,5,6,7,8,9,10};
+        List<Integer> lista = List.of(numeros);// se debe hacer una conversion previa para que usarse con un foreach.
+        lista.forEach(numerosLista -> System.out.println(numerosLista));
+        System.out.println("-------------------------Lambda con for each version corta----------------------");
+        lista.forEach(System.out::println);
+
 
     }
 }
