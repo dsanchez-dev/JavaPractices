@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public class TareaConHerenciaDeThread extends Thread{
     String nametask = "Tarea ejecutada con herencia de Thread";
-    int number =3;
 
     public TareaConHerenciaDeThread(){
     }
@@ -13,18 +12,10 @@ public class TareaConHerenciaDeThread extends Thread{
         this.nametask = nametask;
     }
 
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
 
     @Override
     public void run(){
         System.out.println("\tString: "+this.nametask);
-        System.out.println("\tNumber: "+this.number);
     }
 
     @Override
@@ -32,11 +23,11 @@ public class TareaConHerenciaDeThread extends Thread{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TareaConHerenciaDeThread that = (TareaConHerenciaDeThread) o;
-        return number == that.number && Objects.equals(nametask, that.nametask);
+        return Objects.equals(nametask, that.nametask);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nametask, number);
+        return Objects.hashCode(nametask);
     }
 }
