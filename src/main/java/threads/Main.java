@@ -1,5 +1,7 @@
 package threads;
 
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -22,7 +24,11 @@ public class Main {
         tareaConHerenciaDeThread.start();
 
 
+        String[] names ={"Daniel","Fernando","Adam"};
 
+        Arrays.sort(names,(a,b) -> a.compareToIgnoreCase(b));
+        System.out.println("\n|------------------Uso de Comparator-----------------|");
+        System.out.println("\t\t\t\t"+Arrays.toString(names));
 
     }
 }
