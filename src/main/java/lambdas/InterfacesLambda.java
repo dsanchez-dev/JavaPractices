@@ -1,4 +1,4 @@
-package threads;
+package lambdas;
 
 import java.util.Comparator;
 import java.util.function.*;
