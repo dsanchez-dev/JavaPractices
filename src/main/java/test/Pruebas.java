@@ -6,17 +6,23 @@ public class Pruebas {
     
     public static void main(String[] args) {
         int numero = 5;
-        int[] datos = {1,8,3,2,5,7,9,6,4};
+        int[] datos = {-5, -21445, -7, -9};
 
-        comprobarFactores(10);
-
+        //numero divisibles de un numero
+        comprobarFactores(numero);
+        //modifcar un dato
         datosModificados(numero);
-
+        //verficar si un numero es par o impar
         verificarParImpar(numero);
-
-        tablasDeMultiplicar(numero = 2);
-
+        //tabla de multiplicar
+        tablasDeMultiplicar(numero);
+        //método de ordenamiento
         ordenamientoDeBurbuja(datos);
+        //secuencia fibonacci
+        fibonnaci(10,0,1);
+
+        //calcular numero max y min
+        numeroMaxMin(datos);
 
     }
 
@@ -34,7 +40,7 @@ public class Pruebas {
 
     //modificacion de datos
     public static void datosModificados(int x){
-        int resultado = 0;
+        int resultado;
         System.out.println("\n Datos en el metodo.");
         System.out.println("El numero recibido fue: "+x);
         resultado = x + 1;
@@ -76,4 +82,42 @@ public class Pruebas {
         System.out.println("\nEl arreglo completo es:\n"+Arrays.toString(arreglo));
     }
 
+    //secuencia fibonnaci
+    public static void fibonnaci(int limite, int a, int b){
+
+        for (int i = 0; i < limite; i++) {
+            System.out.println("\nFibonacci: " + a + ", " + b);
+            int c = a + b;
+            System.out.println("resultado= "+c);
+            a = b;
+            b = c;
+        }
+    }
+
+    //maximo y minimo
+    public static void numeroMaxMin(int[] arreglo) {
+        if (arreglo.length == 0) {
+            System.out.println("El arreglo está vacío");
+            return;
+        }
+
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+
+        for (int numero : arreglo) {
+            if (numero > max) {
+                max = numero;
+            }
+            if (numero >= 0 && numero < min) {
+                min = numero;
+            }
+        }
+
+        //salida de datos
+        if (min == Integer.MAX_VALUE){
+            System.out.println("\nTodos los numeros del arreglo son negativos");
+        }else {
+            System.out.println("\nEl número máximo es: " + max + " y el número menor es: " + min);
+        }
+    }
 }
