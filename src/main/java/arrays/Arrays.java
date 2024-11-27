@@ -9,5 +9,6 @@ public class Arrays {
 
     public static void modify(int x) {
         x = x + 5;
+        System.out.println("x = " + x);
     }
 }
