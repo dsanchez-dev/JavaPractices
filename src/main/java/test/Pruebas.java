@@ -8,6 +8,7 @@ public class Pruebas {
         int numero = 5;
         int[] datos = {-5, -21445, -7, -9};
 
+        /*
         //numero divisibles de un numero
         comprobarFactores(numero);
         //modifcar un dato
@@ -22,7 +23,11 @@ public class Pruebas {
         fibonnaci(10,0,1);
 
         //calcular numero max y min
-        numeroMaxMin(datos);
+        numeroMaxMin(datos);  */
+
+        System.out.println(oracionPalindromo("AnitaLavaLaTina"));
+        System.out.println(oracionPalindromo("lol"));
+        System.out.println(oracionPalindromo("Hola"));
 
     }
 
@@ -120,4 +125,10 @@ public class Pruebas {
             System.out.println("\nEl número máximo es: " + max + " y el número menor es: " + min);
         }
     }
+
+    public static boolean oracionPalindromo(String str){
+        String inversa = new StringBuilder(str).reverse().toString();
+        return str.equalsIgnoreCase(inversa);
+    }
+
 }
