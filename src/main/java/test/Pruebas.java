@@ -23,11 +23,16 @@ public class Pruebas {
         fibonnaci(10,0,1);
 
         //calcular numero max y min
-        numeroMaxMin(datos);  */
+        numeroMaxMin(datos);
 
+        //verificar si una oracion es palindromo
         System.out.println(oracionPalindromo("AnitaLavaLaTina"));
         System.out.println(oracionPalindromo("lol"));
         System.out.println(oracionPalindromo("Hola"));
+        */
+
+        System.out.println(esPrimo(7));//true);
+        System.out.println(esPrimo(9));//false
 
     }
 
@@ -129,6 +134,15 @@ public class Pruebas {
     public static boolean oracionPalindromo(String str){
         String inversa = new StringBuilder(str).reverse().toString();
         return str.equalsIgnoreCase(inversa);
+    }
+
+    public static boolean esPrimo(int numero){
+        if(numero <= 1) return false;
+
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+            if(numero %i == 0) return false;
+        }
+        return true;
     }
 
 }
