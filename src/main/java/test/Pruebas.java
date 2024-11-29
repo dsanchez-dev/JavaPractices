@@ -6,7 +6,7 @@ public class Pruebas {
     
     public static void main(String[] args) {
         int numero = 5;
-        int[] datos = {-5, -21445, -7, -9};
+        int[] datos = {1,2,3,4,5,6,7,8,9,0};
 
         /*
         //numero divisibles de un numero
@@ -29,10 +29,14 @@ public class Pruebas {
         System.out.println(oracionPalindromo("AnitaLavaLaTina"));
         System.out.println(oracionPalindromo("lol"));
         System.out.println(oracionPalindromo("Hola"));
-        */
 
+        //verificar si un numero es primo
         System.out.println(esPrimo(7));//true);
         System.out.println(esPrimo(9));//false
+        */
+
+        invertirOrdenDeArreglo(datos);
+        System.out.println(Arrays.toString(datos));
 
     }
 
@@ -143,6 +147,17 @@ public class Pruebas {
             if(numero %i == 0) return false;
         }
         return true;
+    }
+
+    public static void invertirOrdenDeArreglo(int[] arreglo){
+        int numeros = arreglo.length;
+
+        for (int i = 0; i < numeros / 2; i++) {
+            int temporal = arreglo[i];
+            arreglo[i] = arreglo[numeros - i - 1];
+            arreglo[numeros - i -1 ] = temporal;
+        }
+
     }
 
 }
